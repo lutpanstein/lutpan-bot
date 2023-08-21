@@ -128,9 +128,9 @@ async def create_botlog(client):
     LOGGER("Uputt").info(
         "TUNGGU SEBENTAR SAYANG. SEDANG MEMBUAT GROUP LOG USERBOT UNTUK KAMU"
     )
-    desc = "Group Log untuk Uputt-Pyrobot.\n\nHARAP JANGAN KELUAR DARI GROUP INI.\n\nPowered By ~ @amneseey0u @FounderTelegramApp 🐣"
+    desc = "Group Log untuk Meliodas-Pyrobot.\n\nHARAP JANGAN KELUAR DARI GROUP INI.\n\nPowered By ~ @berisikjeleg @ampunbgdevs 🐣"�"�"
     try:
-        photo = "Uputt/resources/logo.jpg"
+        photo = ""
         gruplog = await client.create_supergroup("Uputt-Pyrobot Logs", desc)
         fine = gruplog.id
         await client.set_chat_photo(fine, photo=photo)
