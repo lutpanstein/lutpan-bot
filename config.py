@@ -17,11 +17,11 @@ from dotenv import load_dotenv
 load_dotenv("config.env")
 
 
-ALIVE_EMOJI = getenv("ALIVE_EMOJI", "🥵")
-ALIVE_LOGO = getenv("ALIVE_LOGO", "https://telegra.ph/file/b42b7a4a22ba89287cad4.jpg")
+ALIVE_EMOJI = getenv("ALIVE_EMOJI", "🥶")
+ALIVE_LOGO = getenv("ALIVE_LOGO", "")
 ALIVE_TEKS_CUSTOM = getenv("ALIVE_TEKS_CUSTOM", "Hey, I am alive.")
-API_HASH = getenv("API_HASH", "34efb38c74d5e6b25d1bb6234396a8af")
-API_ID = getenv("API_ID", "23129036")
+API_HASH = getenv("API_HASH", "6a0cc8885587adddebae612b440d5018")
+API_ID = getenv("API_ID", "12183627")
 BLACKLIST_CHAT = getenv("BLACKLIST_CHAT", None)
 if not BLACKLIST_CHAT:
     BLACKLIST_CHAT = [-1001608701614, -1001675459127, -1001473548283, -1001608701614]
@@ -30,19 +30,19 @@ BOTLOG_CHATID = int(getenv("BOTLOG_CHATID") or 0)
 BOT_VER = "1.1.5@main"
 BRANCH = getenv("BRANCH", "main") #don't change
 CMD_HNDLR = cmd
-OWNER_ID = getenv("OWNER_ID", "1860375797")
+OWNER_ID = getenv("OWNER_ID", "956849848")
 BOT_TOKEN = getenv("BOT_TOKEN", "none")
-OPENAI_API_KEY = getenv("OPENAI_API_KEY", "")
-CHANNEL = getenv("CHANNEL", "amneseey0u")
+OPENAI_API_KEY = getenv("OPENAI_API_KEY", "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")
+CHANNEL = getenv("CHANNEL", "berisikjelekk")
 CMD_HANDLER = getenv("CMD_HANDLER", ".")
 DB_URL = getenv("DATABASE_URL", "")
 GIT_TOKEN = getenv("GIT_TOKEN", "")
-GROUP = getenv("GROUP", "uputtSupport")
+GROUP = getenv("GROUP", "meliodassupoort")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 PMPERMIT_PIC = getenv("PMPERMIT_PIC", None)
 PM_AUTO_BAN = strtobool(getenv("PM_AUTO_BAN", "True"))
-REPO_URL = getenv("REPO_URL", "https://github.com/iamuput/Uputt-Pyrobot")
+REPO_URL = getenv("REPO_URL", "https://github.com/meliodas560/Pyro-Meliodas")
 STRING_SESSION1 = getenv("STRING_SESSION1", "")
 STRING_SESSION2 = getenv("STRING_SESSION2", "")
 STRING_SESSION3 = getenv("STRING_SESSION3", "")
