@@ -1,4 +1,4 @@
-<p align="center"> 〆 𝚄𝙿𝚄𝚃𝚃-𝙿𝚈𝚁𝙾𝙱𝙾𝚃 〆 </p>
+<p align="center"> 〆 MELIODAS PYROBOT 〆 </p>
 
 
 <p align="center">
@@ -10,7 +10,7 @@
  $ sudo apt-get update -y
  $ sudo apt-get upgrade
  $ git clone https://github.com/iamuput/Uputt-Pyrobot
- $ cd Uputt-Pyrobot
+ $ cd meli-Pyrobot
  $ python3 -m venv venv
  $ source venv/bin/act*
  $ pip3 install -U-r req*
@@ -28,7 +28,7 @@
 
 ## Heroku Deploy!
 <h3 align="center">Click The Button</h3>
-<a href="https://heroku.com/deploy?template=https://github.com/iamuput/Uputt-Pyrobot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/meliodas560/Pyro-Meliodas"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
 
 
