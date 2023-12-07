@@ -1,4 +1,4 @@
-<p align="center">  PYRO-CLEO  </p>
+<p align="center">  Lutpan-Ubot </p>
 
 
 <p align="center">
@@ -10,7 +10,7 @@
  $ sudo apt-get update -y
  $ sudo apt-get upgrade
  $ git clone https://github.com/lutpanstein/lutpan-bot
- $ cd Pyro-Cleo
+ $ cd lutpan-bot
  $ python3 -m venv venv
  $ source venv/bin/act*
  $ pip3 install -U-r req*
