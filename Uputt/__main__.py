@@ -23,7 +23,7 @@ async def main():
     await app.start()
     print("LOG: Founded Bot token Booting..")
     for all_module in ALL_MODULES:
-        importlib.import_module("Lutpan.modules" + all_module)
+        importlib.import_module("Uputt.modules" + all_module)
         print(f"Successfully Imported {all_module} ")
     for bot in bots:
         try:
@@ -45,7 +45,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    LOGGER("Lutpan").info("LUTPAN UBOT Telah Aktif")
+    LOGGER("Uputt").info("LUTPAN UBOT Telah Aktif")
     heroku()
     install()
     LOOP.run_until_complete(main())
