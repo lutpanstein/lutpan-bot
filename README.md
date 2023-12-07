@@ -1,4 +1,4 @@
-<p align="center"> 〆 MELIODAS PYROBOT 〆 </p>
+<p align="center">  PYRO-CLEO  </p>
 
 
 <p align="center">
@@ -9,8 +9,8 @@
 ```console
  $ sudo apt-get update -y
  $ sudo apt-get upgrade
- $ git clone https://github.com/iamuput/Uputt-Pyrobot
- $ cd meli-Pyrobot
+ $ git clone https://github.com/lutpanstein/lutpan-bot
+ $ cd Pyro-Cleo
  $ python3 -m venv venv
  $ source venv/bin/act*
  $ pip3 install -U-r req*
@@ -28,7 +28,7 @@
 
 ## Heroku Deploy!
 <h3 align="center">Click The Button</h3>
-<a href="https://heroku.com/deploy?template=https://github.com/meliodas560/Pyro-Meliodas"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/lutpanstein/lutpan-bot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
 
 
@@ -44,6 +44,7 @@
 - Ayra X Userbot
 - Kazu
 - Geez|Ram
+- SteadyProject 
 - Iamuput
 ## Support / Channel
 
