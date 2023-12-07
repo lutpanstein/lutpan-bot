@@ -93,8 +93,8 @@ async def pingme(client: Client, message: Message):
 )
 async def peler_function(message: Message, answers):
     msg = (
-        fb    "⚝ 𝙻𝚄𝚃𝙿𝙰𝙽 𝚄𝙱𝙾𝚃 ⚝\n"
-        "ㅤ    ㅤ**NYALA** \n"
+        f"       ⚝ 𝙻𝚄𝚃𝙿𝙰𝙽 𝚄𝙱𝙾𝚃 ⚝\n"
+        f"ㅤ    ㅤ**NYALA** \n"
         f" ⚘ㅤㅤㅤ 𝙿𝙻𝚄𝙶𝙸𝙽 ❥ </b> <code>{len(modules)} Modules</code> \n"
         f" ⚘ㅤㅤ𝚟𝚎𝚛𝚜𝚒 ❥ {BOT_VER} \n"
         f" ⚘ㅤㅤ`BRANCH`: {branch} \n\n"
