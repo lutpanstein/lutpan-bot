@@ -15,7 +15,6 @@ from pyrogram.types import Message
 
 from config import CMD_HANDLER as cmd
 from Uputt import BOTLOG_CHATID, LOGGER
-from Uputt.helpers.adminHelpers import DEVS
 from Uputt.helpers.basic import edit_or_reply
 
 from .help import add_command_help
@@ -23,7 +22,6 @@ from .help import add_command_help
 HAPP = None
 
 
-@Client.on_message(filters.command("restc", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("restart", cmd) & filters.me)
 async def restart_bot(_, message: Message):
     try:
@@ -46,9 +44,9 @@ async def shutdown_bot(client: Client, message: Message):
         await client.send_message(
             BOTLOG_CHATID,
             "**#SHUTDOWN** \n"
-            "**Uputt-Pyrobot** telah di matikan!\nJika ingin menghidupkan kembali silahkan buka heroku",
+            "**LUTPAN USERBOT** telah di matikan!\nJika ingin menghidupkan kembali silahkan buka heroku",
         )
-    await edit_or_reply(message, "**Uputt-Pyrobot Berhasil di matikan!**")
+    await edit_or_reply(message, "**LUTPAN UBOT Berhasil di matikan!**")
     if HAPP is not None:
         HAPP.process_formation()["worker"].scale(0)
     else:
@@ -62,7 +60,7 @@ async def logs_ubot(client: Client, message: Message):
             message,
             "Pastikan `HEROKU_API_KEY` dan `HEROKU_APP_NAME` anda dikonfigurasi dengan benar di config vars heroku",
         )
-    Man = await edit_or_reply(message, "**Sedang Mengambil Logs Heroku**")
+    Uputt = await edit_or_reply(message, "**Sedang Mengambil Logs Heroku**")
     with open("Logs-Heroku.txt", "w") as log:
         log.write(HAPP.get_log())
     await client.send_document(

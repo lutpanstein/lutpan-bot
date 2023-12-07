@@ -18,7 +18,7 @@ from Uputt.helpers.basic import edit_or_reply
 from .help import add_command_help
 
 
-@Client.on_message(filters.command("sinimasuk", ["."]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("cjoin", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("join", cmd) & filters.me)
 async def join(client: Client, message: Message):
     Uputt = message.command[1] if len(message.command) > 1 else message.chat.id

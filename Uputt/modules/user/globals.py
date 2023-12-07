@@ -44,18 +44,18 @@ globals_init()
 async def gban_user(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     if message.from_user.id != client.me.id:
-        Uputt = await message.reply("`Gbanning...`")
+        Uputt = await message.reply("`MAINNYA GBAN ANJIRRR`")
     else:
-        Uputt = await message.edit("`Gbanning....`")
+        Uputt = await message.edit("`Lagi gban bang`")
     if not user_id:
-        return await Uputt.edit("Mau Gban Siapa Hayoo!!!!.")
+        return await Uputt.edit("Ganti username dia bang takut digban.")
     if user_id == client.me.id:
         return await Uputt.edit("**Ngapain NgeGban Diri Sendiri Pepek**")
     if user_id in DEVS:
-        return await Uputt.edit("**Gak Bisa Di Gban Kontol karena dia Yang Buat Aku 🗿**")
+        return await Uputt.edit("**NI DEVELOPER Uputt TERHORMAT GABISA LU BAN PEPEKK**")
     if user_id in WHITELIST:
         return await Uputt.edit(
-            "**Kau Gak Bisa Kontol Gban Dia Karena Dia Adalah admin @UputtSupport 😡**"
+            "**Kau Gak Bisa Kontol Gban Dia Karena Dia Adalah admin @Karc0de 😡**"
         )
     if user_id:
         try:
@@ -110,7 +110,7 @@ async def ungban_user(client: Client, message: Message):
 
     try:
         if not sql.is_gbanned(user.id):
-            return await Uputt.edit("`User already ungban`")
+            return await Uputt.edit("`Udah ga digban tititttt`")
         ung_chats = await get_ub_chats(client)
         if not ung_chats:
             return await Uputt.edit("**Anda tidak mempunyai GC yang anda admin 🥺**")
@@ -124,9 +124,9 @@ async def ungban_user(client: Client, message: Message):
                 er += 1
         sql.ungban(user.id)
         msg = (
-            r"**\\#UnGbanned_User//**"
-            f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})"
-            f"\n**User ID:** `{user.id}`"
+            r"**MAKHLUK YG DIBUKAIN GBAN**"
+            f"\n\n**NAMA MAKHLUK** [{user.first_name}](tg://user?id={user.id})"
+            f"\n**TOGEL** `{user.id}`"
         )
         if reason:
             msg += f"\n**Reason:** `{reason}`"
@@ -140,7 +140,7 @@ async def ungban_user(client: Client, message: Message):
 @Client.on_message(filters.command("listgban", cmd) & filters.me)
 async def gbanlist(client: Client, message: Message):
     users = sql.gbanned_users()
-    Kazu = await edit_or_reply(message, "`Processing...`")
+    Uputt = await edit_or_reply(message, "`Processing...`")
     if not users:
         return await Uputt.edit("Belum Ada Jamet yang Di-Gban")
     gban_list = "**GBanned Users:**\n"
@@ -174,7 +174,7 @@ async def gmute_user(client: Client, message: Message):
         return await Uputt.edit("**Gak Bisa Di Gmute Kontol karena dia Yang Buat Aku 🗿**")
     if user.id in WHITELIST:
         return await Uputt.edit(
-            "**Mana Bisa Anjing Gmute Admin @UputtSupport 😡**"
+            "**Kau Gak Bisa Kontol Gmute Dia Karena Dia Adalah admin @Karc0de 😡**"
         )
     try:
         replied_user = reply.from_user
@@ -220,13 +220,13 @@ async def ungmute_user(client: Client, message: Message):
     try:
         replied_user = reply.from_user
         if replied_user.is_self:
-            return await Man.edit("`Calm down anybob, you can't ungmute yourself.`")
+            return await Uputt.edit("`Calm down anybob, you can't ungmute yourself.`")
     except BaseException:
         pass
 
     try:
         if not sql2.is_gmuted(user.id):
-            return await Uputt.edit("`User already ungmuted`")
+            return await Uputt.edit("`Udah diemut masal`")
         sql2.ungmute(user.id)
         try:
             common_chats = await client.get_common_chats(user.id)
@@ -235,7 +235,7 @@ async def ungmute_user(client: Client, message: Message):
         except BaseException:
             pass
         await Uputt.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) globally ungmuted!"
+            f"[{user.first_name}](tg://user?id={user.id}) **DI EMUT MASALL**"
         )
     except Exception as e:
         await Uputt.edit(f"**ERROR:** `{e}`")
@@ -248,7 +248,7 @@ async def gmutelist(client: Client, message: Message):
     Uputt = await edit_or_reply(message, "`Processing...`")
     if not users:
         return await Uputt.edit("Belum Ada Jamet yang Di-Gmute")
-    gmute_list = "**GMuted Users:**\n"
+    gmute_list = "**MAKHLUK YG DI GLOBAL EMUT :**\n"
     count = 0
     for i in users:
         count += 1

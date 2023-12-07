@@ -100,7 +100,7 @@ async def module_ping(client: Client, message: Message):
             print(f"{e}")
 
 
-@Client.on_message(filters.command("alive", cmd) & filters.me)
+@Client.on_message(filters.command("upt", cmd) & filters.me)
 async def module_peler(client: Client, message: Message):
     cdm = message.command
     help_arg = ""

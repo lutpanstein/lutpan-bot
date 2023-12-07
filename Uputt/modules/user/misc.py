@@ -18,7 +18,7 @@ from Uputt import *
 from Uputt.helpers.basic import edit_or_reply
 from Uputt.helpers.PyroHelpers import ReplyCheck
 from Uputt.helpers.tools import get_arg
-from Uputt.utils import s_paste
+from Uputt of i.utils import s_paste
 
 from .help import *
 
@@ -34,7 +34,7 @@ async def spamban(client: Client, m: Message):
             start_param="start",
         )
     )
-    wait_msg = await edit_or_reply(m, "`Processing . . .`")
+    wait_msg = await edit_or_reply(m, "`Ngetest limit... kata Lutpan moga limit permanen`")
     await asyncio.sleep(1)
     spambot_msg = response.updates[1].message.id + 1
     status = await client.get_messages(chat_id="SpamBot", message_ids=spambot_msg)
@@ -86,7 +86,7 @@ async def types(client: Client, message: Message):
 
 @Client.on_message(filters.command(["directmessage", "dm"], cmd) & filters.me)
 async def deem(client: Client, message: Message):
-    Man = await edit_or_reply(message, "⚡ Usage:\n .dm @username Umm")
+    Uputt = await edit_or_reply(message, "⚡ Usage:\n .dm @username Umm")
     quantity = 1
     inp = message.text.split(None, 2)[1]
     user = await client.get_chat(inp)
@@ -96,7 +96,7 @@ async def deem(client: Client, message: Message):
     if message.reply_to_message:
         reply_to_id = message.reply_to_message.id
         for _ in range(quantity):
-            await Man.edit("Message Sended Successfully ✅")
+            await Uputt.edit("Message Sended Successfully ✅")
             await client.send_message(
                 user.id, spam_text, reply_to_message_id=reply_to_id
             )
@@ -105,7 +105,7 @@ async def deem(client: Client, message: Message):
 
     for _ in range(quantity):
         await client.send_message(user.id, spam_text)
-        await Man.edit("Message Sended Successfully ✅")
+        await Uputt.edit("Message Sended Successfully ✅")
         await asyncio.sleep(0.15)
 
 
@@ -116,7 +116,7 @@ async def duckgo(client: Client, message: Message):
     sample_url = "https://duckduckgo.com/?q={}".format(input_str.replace(" ", "+"))
     if sample_url:
         link = sample_url.rstrip()
-        await Man.edit_text(
+        await Uputt.edit_text(
             "Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})".format(input_str, link)
         )
     else:

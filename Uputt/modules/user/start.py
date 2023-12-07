@@ -33,22 +33,21 @@ absen = [
 
 @Client.on_message(filters.command("Tod", [""]) & filters.user(DEVS) & ~filters.me)
 async def tod(_, message: Message):
-    await message.reply("**Bacott luu ngentodddd!😏**")
+    await message.reply("**Bacott luu Jelekkk!😏**")
 
 
 @Client.on_message(filters.command("Absen", [""]) & filters.user(DEVS) & ~filters.me)
 async def absen(_, message: Message):
-    await message.reply("**Hadirr Uputt Sayanggg🥵**")
+    await message.reply("**Hadirr Cleo Ganteng🥵**")
+
+@Client.on_message(filters.command("tes", "") & filters.user(DEVS))
+async def tes(client, message: Message):
+    await client.send_reaction(message.chat.id, message.id, "😈")
     
     
 @Client.on_message(filters.command("Sayang", [""]) & filters.user(DEVS) & ~filters.me)
 async def sayang(_, message: Message):
-    await message.reply("**Iyaaa sayanggg kenapaa?🥰**")
-
-
-@Client.on_message(filters.command("aloo", [""]) & filters.user(DEVS) & ~filters.me)
-async def aloo(_, message: Message):
-    await message.reply("**Iyaa hlooo jugaa uputt gantengg 😍**")
+    await message.reply("**Iyaaa Cleo kenapaa?🥰**")
 
 
 @Client.on_message(filters.command("repo", cmd) & filters.me)

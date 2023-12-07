@@ -45,12 +45,12 @@ async def get_group_call(
 
 
 @Client.on_message(
-    filters.command("Startvcs", [""]) & filters.user(DEVS) & ~filters.me
+    filters.command("startvcs", ["."]) & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.command(["startvc"], cmd) & filters.me)
 async def opengc(client: Client, message: Message):
     flags = " ".join(message.command[1:])
-    Uputt = await edit_or_reply(message, "`Processing . . .`")
+    Uputt = await edit_or_reply(message, "`wait bang...`")
     vctitle = get_arg(message)
     if flags == enums.ChatType.CHANNEL:
         chat_id = message.chat.title
@@ -79,7 +79,7 @@ async def opengc(client: Client, message: Message):
         await Uputt.edit(f"**INFO:** `{e}`")
 
 
-@Client.on_message(filters.command("Stopvcs", [""]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(filters.command("stopvcs", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command(["stopvc"], cmd) & filters.me)
 async def end_vc_(client: Client, message: Message):
     """End group call"""
@@ -91,47 +91,47 @@ async def end_vc_(client: Client, message: Message):
     ):
         return
     await client.send(DiscardGroupCall(call=group_call))
-    await edit_or_reply(message, f"Ended group call in **Chat ID** : `{chat_id}`")
+    await edit_or_reply(message, f"Udah turun dari os kandang ini **KANDANG** : `{chat_id}`")
 
 
 @Client.on_message(
-    filters.command("naikos", [""]) & filters.user(DEVS) & ~filters.via_bot
+    filters.command("joinvcs", ["."]) & filters.user(DEVS) & ~filters.via_bot
 )
 @Client.on_message(filters.command("joinvc", cmd) & filters.me)
 async def joinvc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
-        Uputt = await message.reply("`Otewee Naik OS...`")
+        Uputt = await message.reply("`wait bejir...`")
     else:
-        Uputt = await message.edit("`Processing...`")
+        Uputt = await message.edit("`wait bejir....`")
     with suppress(ValueError):
         chat_id = int(chat_id)
     try:
         await client.group_call.start(chat_id)
     except Exception as e:
         return await Uputt.edit(f"**ERROR:** `{e}`")
-    await Uputt.edit(f"❏ **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`")
+    await Uputt.edit(f" **UDAH NAIK YA KONTOL AKUNLU DI OS KANDANG INI**\n **NI KANDANGNYA** `{chat_id}`")
     await sleep(5)
     await client.group_call.set_is_mute(True)
 
 
 @Client.on_message(
-    filters.command("turunos", [""]) & filters.user(DEVS) & ~filters.via_bot
+    filters.command("leavevcs", ["."]) & filters.user(DEVS) & ~filters.via_bot
 )
 @Client.on_message(filters.command("leavevc", cmd) & filters.me)
 async def leavevc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
-        Uputt = await message.reply("`Turun dulu gaess...`")
+        Uputt = await message.reply("`Processing...`")
     else:
-        Uputt = await message.edit("`Processing...`")
+        Uputt = await message.edit("`Processing....`")
     with suppress(ValueError):
         chat_id = int(chat_id)
     try:
         await client.group_call.stop()
     except Exception as e:
         return await edit_or_reply(message, f"**ERROR:** `{e}`")
-    msg = "❏ **Berhasil Turun dari Obrolan Suara**"
+    msg = "**UDAH GA DI OS DI KANDANG INI BANG**"
     if chat_id:
         msg += f"\n└ **Chat ID:** `{chat_id}`"
     await Uputt.edit(msg)
