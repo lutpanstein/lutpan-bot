@@ -4,17 +4,17 @@ from uvloop import install
 
 
 from Uputt.modules import ALL_MODULES
-from Uputt import BOTLOG_CHATID, LOGGER, LOOP, aiosession, app, bots, ids, bot1
-from Uputt.helpers import join
-from Uputt.helpers.misc import create_botlog, heroku
+from Uputt import BOTLOG_CHATID, LOGGER, LOOP, aiosession, app, bots, ids
+from Uputt.modules.basic import join
+from Uputt.helpers.misc import heroku, create_botlog
 
-BOT_VER = "2.0.0"
+BOT_VER = "9.9.9"
 CMD_HANDLER = ["." "," "?" "!"]
 MSG_ON = """
-〆 **Uputt-Pyrobot Di Aktifkan** 〆
+💢 **LUTPANSTEIN MASSAGE** 💢
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
-㋱ **Userbot Version -** `{}`
-㋱ **Ketik** `{}alive` **untuk Mengecek Bot**
+❍▹ 𝙻𝚄𝚃𝙿𝙰𝙽 𝚄𝙱𝙾𝚃 𝚟𝚎𝚛𝚜𝚒  `{}`
+❍▹ **Kᴇᴛɪᴋ** `{}alive` **Uɴᴛᴜᴋ Mᴇɴɢᴇᴄᴇᴋ Bᴏᴛ**
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 """
 
@@ -23,7 +23,7 @@ async def main():
     await app.start()
     print("LOG: Founded Bot token Booting..")
     for all_module in ALL_MODULES:
-        importlib.import_module("Uputt.modules" + all_module)
+        importlib.import_module("Lutpan.modules" + all_module)
         print(f"Successfully Imported {all_module} ")
     for bot in bots:
         try:
@@ -38,14 +38,14 @@ async def main():
             ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
-    if not str(BOTLOG_CHATID).startswith("-100"):
-        await create_botlog(bot1)
+    if bot and not str(BOTLOG_CHATID).startswith("-100"):
+        await create_botlog(bot)
     await idle()
     await aiosession.close()
 
 
 if __name__ == "__main__":
-    LOGGER("Uputt").info("Uputt-Pyrobot Telah Aktif Ya Kontol🐣")
-    install()
+    LOGGER("Lutpan").info("LUTPAN UBOT Telah Aktif")
     heroku()
+    install()
     LOOP.run_until_complete(main())
