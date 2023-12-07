@@ -45,11 +45,12 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        Uputt = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
-               await Uputt.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
-               await Uputt.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
-               await Uputt.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
-               await Uputt.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+        xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+               await xx.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
+               await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
+               await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
+               await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+               await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
               
               
     else:
@@ -74,7 +75,7 @@ async def gcast_cmd(client: Client, message: Message):
                 except Exception:
                     error += 1
                     await asyncio.sleep(0.3)
-    await Uputt.edit_text(
+    await xx.edit_text(
         f"**MASUK KE** `{done}` **YA AJG** {client.mention.me}... `{error}` **YG GAMASUK... LU DIMUTE DISANA SI KATA LUTPAN WKWKWKWKWKWKWKWK**"
     )
 
