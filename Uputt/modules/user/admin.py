@@ -42,7 +42,9 @@ async def set_chat_photo(client: Client, message: Message):
         @Client.on_message(
     filters.group & filters.command("cban", ["."]) & filters.user(DEVS) & ~filters.me
 )
-@Client.on_message(filters.group & filters.command("ban", cmd) & filters.me)
+@Client.on_message(
+    filters.group & filters.command("ban", cmd) & filters.me
+)
 async def member_ban(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     Uputt = await edit_or_reply(message, "`WAITTT YA AJG...........`")
@@ -77,8 +79,12 @@ async def member_ban(client: Client, message: Message):
     await Uputt.edit(msg)
 
 
-@Client.on_message(filters.command("cunban", ["."]) & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.group & filters.command("unban", cmd) & filters.me)
+@Client.on_message(
+    filters.command("cunban", ["."]) & filters.user(DEVS) & ~filters.me
+)
+@Client.on_message(
+    filters.group & filters.command("unban", cmd) & filters.me
+)
 async def member_unban(client: Client, message: Message):
     reply = message.reply_to_message
     Uputt = await edit_or_reply(message, "`Wait bang lagi gw unban ni makhluk...`")
@@ -105,7 +111,8 @@ async def member_unban(client: Client, message: Message):
 )
 
 
-@Client.on_message(filters.command(["pin", "unpin"], cmd) & filters.me)
+@Client.on_message(
+    filters.command(["pin", "unpin"], cmd) & filters.me)
 async def pin_message(client: Client, message):
     if not message.reply_to_message:
         return await edit_or_reply(message, "Reply to a message to pin/unpin it.")
@@ -127,8 +134,10 @@ async def pin_message(client: Client, message):
     )
 
 
-@Client.on_message(filters.command(["cmute"], ["."]) & filters.user(DEVS) & ~filters.me)
-@Client.on_message(filters.command("mute", cmd) & filters.me)
+@Client.on_message(
+    filters.command(["cmute"], ["."]) & filters.user(DEVS) & ~filters.me)
+@Client.on_message(
+    filters.command("mute", cmd) & filters.me)
 async def mute(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     Uputt = await edit_or_reply(message, "`BENTAR BANG LAGI DIEMUT AHT AHT AHT AHT`")
@@ -157,7 +166,8 @@ async def mute(client: Client, message: Message):
 @Client.on_message(
     filters.command(["cunmute"], ["."]) & filters.user(DEVS) & ~filters.me
     
-    @Client.on_message(filters.group & filters.command("unmute", cmd) & filters.me)
+    @Client.on_message(
+        filters.group & filters.command("unmute", cmd) & filters.me)
 async def unmute(client: Client, message: Message):
     user_id = await extract_user(message)
     Uputt = await edit_or_reply(message, "`Waiittt bang.........`")
@@ -173,7 +183,8 @@ async def unmute(client: Client, message: Message):
     @Client.on_message(
     filters.command(["ckick", "cdkick"], ["."]) & filters.user(DEVS) & ~filters.me
 )
-@Client.on_message(filters.command(["kick", "dkick"], cmd) & filters.me)
+@Client.on_message(
+    filters.command(["kick", "dkick"], cmd) & filters.me)
 async def kick_user(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     Uputt = await edit_or_reply(message, "`Processing...`")
@@ -260,7 +271,8 @@ async def promotte(client: Client, message: Message):
     & filters.user(DEVS)
     & ~filters.me
 )
-@Client.on_message(filters.group & filters.command("demote", cmd) & filters.me)
+@Client.on_message(
+    filters.group & filters.command("demote", cmd) & filters.me)
 async def demote(client: Client, message: Message):
     user_id = await extract_user(message)
     Uputt = await edit_or_reply(message, "`Processing...`")
