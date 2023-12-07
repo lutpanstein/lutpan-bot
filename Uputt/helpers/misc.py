@@ -125,15 +125,12 @@ async def in_heroku():
 async def create_botlog(client):
     if HAPP is None:
         return
-    LOGGER("Uputt").info(
+    LOGGER("").info(
         "TUNGGU SEBENTAR SAYANG. SEDANG MEMBUAT GROUP LOG USERBOT UNTUK KAMU"
     )
-    desc = "Group Log untuk Meliodas-Pyrobot.\n\nHARAP JANGAN KELUAR DARI GROUP INI.\n\nPowered By ~ @berisikjeleg @ampunbgdevs 🐣"�"�"
+    desc = "Group Log untuk LUTPAN UBOT LH.\n\nHARAP JANGAN KELUAR DARI GROUP INI.\n\n  "
     try:
-        photo = ""
-        gruplog = await client.create_supergroup("Uputt-Pyrobot Logs", desc)
-        fine = gruplog.id
-        await client.set_chat_photo(fine, photo=photo)
+        gruplog = await client.create_supergroup(" LUTPAN UBOT Log ", desc)
         if await in_heroku():
             heroku_var = HAPP.config()
             heroku_var["BOTLOG_CHATID"] = gruplog.id

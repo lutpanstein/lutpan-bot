@@ -2,7 +2,7 @@ from .adminHelpers import *
 from .basic import *
 from .constants import *
 from .expand import *
-#from misc import *
+#from .misc import *
 from .interval import *
 from .msg_types import *
 from .parser import *
@@ -23,10 +23,9 @@ async def join(client):
     try:
         await client.join_chat("amneseey0u")
         await client.join_chat("UputtSupport")
-        await client.join_chat("Flukosaa")
-        await client.join_chat("t.me/+8P216ZuZDTdhNTk1")
-        await client.join_chat("meliodassupoort")
         await client.join_chat("berisikjelekk")
-        await client.join_chat("meliodasstoree")
+        await client.join_chat("meliodassupoort")
+        await client.join_chat("carivirtualrandom")
+        await client.join_chat("allaboutcleoo")
     except BaseException:
         pass

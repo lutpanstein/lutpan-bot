@@ -3,10 +3,10 @@ from Uputt import CMD_HELP
 class Data:
 
     text_help_menu = (
-        "**Menu Inline Uputt-Pyrobot**\n**Prefixes:** ., ?, !, *"
+        "**Menu Inline Pyro-Cleo**\n**Prefixes:** ., ?, !, *"
         .replace(",", "")
         .replace("[", "")
         .replace("]", "")
         .replace("'", "")
     )
-    reopen = [[InlineKeyboardButton("ᴘᴇɴᴄᴇᴛ ᴀᴊᴀ", callback_data="reopen")]]
+    reopen = [[InlineKeyboardButton("TEKEN AJA", callback_data="reopen")]]
