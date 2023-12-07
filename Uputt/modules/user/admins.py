@@ -15,6 +15,7 @@ from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 
 from config import CMD_HANDLER as cmd
 from Uputt.helpers.adminHelpers import DEVS
+from .help import add_command_help
 from Uputt.helpers.basic import edit_or_reply
 from Uputt.utils.misc import extract_user, extract_user_and_reason, list_admins
 
