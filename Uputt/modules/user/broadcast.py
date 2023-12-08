@@ -8,6 +8,7 @@
 # t.me/SharingUserbot & t.me/Lunatic0de
 
 import asyncio
+import os
 from asyncio import sleep
 
 import dotenv
@@ -15,6 +16,7 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 from pyrogram.raw import functions
 from requests import get
+from telegraph import exceptions, upload_file
 
 from config import BLACKLIST_GCAST
 from config import CMD_HANDLER as cmd
@@ -56,19 +58,20 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("cgcast", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
-    if message.edit_or_reply_to_message or get_arg(message):
- Man = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+    if message.reply_to_message or get_arg(message):
+ Uputt = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+                await asyncio.sleep(2)
+       xx = await edit_or_reply(message, "Wait titittttt bakal dikirim kok gikesanlu yg gaseberapa")
+                     await xx.edit(message, "Eh iya baca ini kontollll... kata lutpan kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
+                     await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
+                     await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
+                     await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+                     await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
+                     await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
+     
+    else None
 
-            xx   = await Man.reply_text((message))
-                await xx.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
-                await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
-                await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
-                await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
-                await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
-                await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
- )    
-    else:
-        return await message.edit_text("**Direply {client.me.mention} kontoooolll kalo ga tambahin kata dibelakang command**")
+         return await message.edit_text("**Direply {client.me.mention} kontoooolll kalo ga tambahin kata dibelakang command**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -89,10 +92,18 @@ async def gcast_cmd(client: Client, message: Message):
                 except Exception:
                     error += 10
                     await asyncio.sleep(10)
-    await Man.reply_text(
+    await Uputt.reply_text(
         f"**MASUK KE** `{done}` **YA AJG** {client.me.mention}... `{error}` **YG GAMASUK... LU DIMUTE DISANA SI KATA LUTPAN WKWKWKWKWKWKWKWK**"
-    )
+    
 
+             try
+               await asyncio.gather(
+                   Uputt.delete()
+                   xx = await edit_or_reply
+     ),
+  )             
+              
+                 
 
 @Client.on_message(filters.command("cgucast", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("gucast", cmd) & filters.me)
