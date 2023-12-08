@@ -91,10 +91,15 @@ async def pingme(client: Client, message: Message):
     start = datetime.now()
 
      xx = await edit_or_reply(message, "**NI LIAT YA AJG PINGYA**")
+           await asyncio.sleep(0.5)
            await xx.edit("**BENTAR YA CUKI**")
+           await asyncio.sleep(0.5) 
            await xx.edit("**LAGI NGETEST PING LU KONTOL**")
+           await asyncio.sleep(0.5)
            await xx.edit("**NGETEST PING BUAT GIKES YA**")
+           await asyncio.sleep(0.5)
            await xx.edit("**KEK DERESS AJA GIKESANLU**")
+           await asyncio.sleep(0.5)
            await xx.edit("**NI {client.me.mention}LIAT YA AJG PINGNYA**")
            end = datetime.now()
            await message.reply_text(

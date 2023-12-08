@@ -17,15 +17,21 @@ from requests import get
 
 from config import BLACKLIST_GCAST
 from config import CMD_HANDLER as cmd
+from config import BOT_VER, BRANCH as brch
+from Uputt import CMD_HELP, StartTime
+from Uputt.helpers.constants import WWW
 from Uputt.helpers.PyroHelpers import SpeedConvert
 from Uputt.helpers.adminHelpers import DEVS
 from Uputt.helpers.basic import edit_or_reply
 from Uputt.helpers.misc import HAPP, in_heroku
+from Uputt.helpers.constants import WWW
 from Uputt.helpers.PyroHelpers import SpeedConvert
 from Uputt.helpers.tools import get_arg
 from Uputt.utils.tools import get_readable_time
 from Uputt.utils.misc import restart
+from Uputt.utils import extract_user
 from Uputt.helpers.adminHelpers import DEVS
+
 
 
 from .help import add_command_help
@@ -50,13 +56,19 @@ del _GCAST_BLACKLIST
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
         xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+               await asyncio.sleep(1)
                await xx.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
+               await asyncio.sleep(1)
                await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
+               await asyncio.sleep(1.5)   
                await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
+               await asyncio.sleep(1.5)
                await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+               await asyncio.sleep(1.5)
                await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
+               await asyncio.sleep(1.5)
                await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
-              
+         
     else:
         return await message.edit_text("**Direply {client.me.mention} kontoooolll kalo ga tambahin kata dibelakang command**")
     done = 0
@@ -74,12 +86,12 @@ async def gcast_cmd(client: Client, message: Message):
                         await msg.copy(chat)
                     elif get_arg:
                         await client.send_message(chat, msg)
-                    done += 1
-                    await asyncio.sleep(0.3)
+                    done += 10
+                    await asyncio.sleep(10)
                 except Exception:
-                    error += 1
-                    await asyncio.sleep(0.3)
-    await xx.edit_text(
+                    error += 10
+                    await asyncio.sleep(10)
+    await message.reply_text(
         f"**MASUK KE** `{done}` **YA AJG** {client.me.mention}... `{error}` **YG GAMASUK... LU DIMUTE DISANA SI KATA LUTPAN WKWKWKWKWKWKWKWK**"
     )
 
