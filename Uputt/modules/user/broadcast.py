@@ -57,13 +57,13 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.edit_or_reply_to_message or get_arg(message):
-        xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
-               await xx.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
-               await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
-               await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
-               await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
-               await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
-               await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
+ xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+await xx.edit_or_reply(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
+await xx.edit_or_reply(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
+await xx.edit_or_reply(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
+await xx.edit_or_reply(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+await xx.edit_or_reply(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
+await xx.edit_or_reply(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
          
     else:
         return await message.edit_text("**Direply {client.me.mention} kontoooolll kalo ga tambahin kata dibelakang command**")
@@ -126,14 +126,14 @@ async def gucast_cmd(client: Client, message: Message):
 @Client.on_message(filters.command("blchat", cmd) & filters.me)
 async def blchatgcast(client: Client, message: Message):
     blacklistgc = "True" if BLACKLIST_GCAST else "False"
-    list = BLACKLIST_GCAST.replace(" ", "\n» ")
+    list = BLACKLIST_GCAST.replace(" ", "\nÂ» ")
     if blacklistgc == "True":
         await edit_or_reply(
             message,
-            f"🔮 **Blacklist GCAST:** `Enabled`\n\n📚 **Blacklist Group:**\n» {list}\n\nKetik `{cmd}addbl` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
+            f"ðŸ”® **Blacklist GCAST:** `Enabled`\n\nðŸ“š **Blacklist Group:**\nÂ» {list}\n\nKetik `{cmd}addbl` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
         )
     else:
-        await edit_or_reply(message, "🔮 **Blacklist GCAST:** `Disabled`")
+        await edit_or_reply(message, "ðŸ”® **Blacklist GCAST:** `Disabled`")
 
 
 @Client.on_message(filters.command("addbl", cmd) & filters.me)
@@ -209,7 +209,7 @@ add_command_help(
         ],
         [
             "delbl",
-            f"Untuk Menghapus grup tersebut dari blacklist gcast.\n\n  •  **Note : **Ketik perintah** `{cmd}addbl` **dan** `{cmd}delbl` **di grup yang kamu Blacklist.",
+            f"Untuk Menghapus grup tersebut dari blacklist gcast.\n\n  â€¢  **Note : **Ketik perintah** `{cmd}addbl` **dan** `{cmd}delbl` **di grup yang kamu Blacklist.",
         ],
     ],
 )
