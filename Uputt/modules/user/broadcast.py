@@ -8,6 +8,7 @@
 # t.me/SharingUserbot & t.me/Lunatic0de
 
 import asyncio
+from asyncio import sleep
 
 import dotenv
 from pyrogram import Client, enums, filters
@@ -26,6 +27,7 @@ from Uputt.helpers.basic import edit_or_reply
 from Uputt.helpers.misc import HAPP, in_heroku
 from Uputt.helpers.constants import WWW
 from Uputt.helpers.PyroHelpers import SpeedConvert
+from Uputt.helpers.PyroHelpers import ReplyCheck
 from Uputt.helpers.tools import get_arg
 from Uputt.utils.tools import get_readable_time
 from Uputt.utils.misc import restart
@@ -54,19 +56,13 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("cgcast", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
-    if message.reply_to_message or get_arg(message):
+    if message.edit_or_reply_to_message or get_arg(message):
         xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
-               await asyncio.sleep(1)
                await xx.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
-               await asyncio.sleep(1)
                await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
-               await asyncio.sleep(1.5)   
                await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
-               await asyncio.sleep(1.5)
                await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
-               await asyncio.sleep(1.5)
                await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
-               await asyncio.sleep(1.5)
                await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
          
     else:
