@@ -57,14 +57,16 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.edit_or_reply_to_message or get_arg(message):
- xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
-await xx.edit_or_reply(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
-await xx.edit_or_reply(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
-await xx.edit_or_reply(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
-await xx.edit_or_reply(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
-await xx.edit_or_reply(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
-await xx.edit_or_reply(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
-         
+ Man = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+
+            xx   = await Man.reply_text((message))
+                await xx.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
+                await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
+                await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
+                await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+                await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
+                await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
+ )    
     else:
         return await message.edit_text("**Direply {client.me.mention} kontoooolll kalo ga tambahin kata dibelakang command**")
     done = 0
@@ -87,7 +89,7 @@ await xx.edit_or_reply(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkw
                 except Exception:
                     error += 10
                     await asyncio.sleep(10)
-    await message.reply_text(
+    await Man.reply_text(
         f"**MASUK KE** `{done}` **YA AJG** {client.me.mention}... `{error}` **YG GAMASUK... LU DIMUTE DISANA SI KATA LUTPAN WKWKWKWKWKWKWKWK**"
     )
 
