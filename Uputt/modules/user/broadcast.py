@@ -21,8 +21,11 @@ from Uputt.helpers.PyroHelpers import SpeedConvert
 from Uputt.helpers.adminHelpers import DEVS
 from Uputt.helpers.basic import edit_or_reply
 from Uputt.helpers.misc import HAPP, in_heroku
+from Uputt.helpers.PyroHelpers import SpeedConvert
 from Uputt.helpers.tools import get_arg
+from Uputt.utils.tools import get_readable_time
 from Uputt.utils.misc import restart
+from Uputt.helpers.adminHelpers import DEVS
 
 
 from .help import add_command_help
@@ -46,16 +49,16 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        xx = await edit_or_reply(message, "Bentar {client.mention.me} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
-               await xx.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.mention.me}")
-               await xx.edit(message, "Eh malah bisa kedeak akunlu {client.mention.me} katanya doang tpi gatau.....")
-               await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.mention.me}")
-               await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.mention.me}")
-               await xx.edit(message, "Bentar {client.mention.me} tunggu aja ntar kekirim gikes lu kata lutpan...")
+        xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+               await xx.edit(message, "Eh iya baca ini kontollll... kata Lutpan.. kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
+               await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
+               await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
+               await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+               await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
                await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**)"
               
     else:
-        return await message.edit_text("**Direply kontoooolll kalo ga tambahin kata dibelakang command**")
+        return await message.edit_text("**Direply {client.me.mention} kontoooolll kalo ga tambahin kata dibelakang command**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -77,7 +80,7 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await xx.edit_text(
-        f"**MASUK KE** `{done}` **YA AJG** {client.mention.me}... `{error}` **YG GAMASUK... LU DIMUTE DISANA SI KATA LUTPAN WKWKWKWKWKWKWKWK**"
+        f"**MASUK KE** `{done}` **YA AJG** {client.me.mention}... `{error}` **YG GAMASUK... LU DIMUTE DISANA SI KATA LUTPAN WKWKWKWKWKWKWKWK**"
     )
 
 
