@@ -23,13 +23,11 @@ from config import CMD_HANDLER as cmd
 from config import BOT_VER, BRANCH as brch
 from Uputt import CMD_HELP, StartTime
 from Uputt.helpers.constants import WWW
-from Uputt.helpers.PyroHelpers import SpeedConvert
+from Uputt.helpers.PyroHelpers import SpeedConvert, ReplyCheck
 from Uputt.helpers.adminHelpers import DEVS
 from Uputt.helpers.basic import edit_or_reply
 from Uputt.helpers.misc import HAPP, in_heroku
 from Uputt.helpers.constants import WWW
-from Uputt.helpers.PyroHelpers import SpeedConvert
-from Uputt.helpers.PyroHelpers import ReplyCheck
 from Uputt.helpers.tools import get_arg
 from Uputt.utils.tools import get_readable_time
 from Uputt.utils.misc import restart
@@ -58,7 +56,7 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("cgcast", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
-    if message.reply_to_message or get_arg(message):
+        if message.reply_to_message or get_arg(message):
         xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
         await xx.edit(message, "Wait titittttt bakal dikirim kok gikesanlu yg gaseberapa"),
         await xx.edit(message, "Eh iya baca ini kontollll... kata lutpan kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
