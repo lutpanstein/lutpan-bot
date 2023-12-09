@@ -123,14 +123,14 @@ async def gucast_cmd(client: Client, message: Message):
 @Client.on_message(filters.command("blchat", cmd) & filters.me)
 async def blchatgcast(client: Client, message: Message):
     blacklistgc = "True" if BLACKLIST_GCAST else "False"
-    list = BLACKLIST_GCAST.replace(" ", "\nÂ» ")
+    list = BLACKLIST_GCAST.replace(" ", "\nĆ‚Ā» ")
     if blacklistgc == "True":
         await edit_or_reply(
             message,
-            f"ðŸ”® **Blacklist GCAST:** `Enabled`\n\nðŸ“� **Blacklist Group:**\nÂ» {list}\n\nKetik `{cmd}addbl` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
+            f"Ć°Åøā€¯Ā® **Blacklist GCAST:** `Enabled`\n\nĆ°Åøā€Å� **Blacklist Group:**\nĆ‚Ā» {list}\n\nKetik `{cmd}addbl` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
         )
     else:
-        await edit_or_reply(message, "ðŸ”® **Blacklist GCAST:** `Disabled`")
+        await edit_or_reply(message, "Ć°Åøā€¯Ā® **Blacklist GCAST:** `Disabled`")
 
 
 @Client.on_message(filters.command("addbl", cmd) & filters.me)
@@ -206,7 +206,7 @@ add_command_help(
         ],
         [
             "delbl",
-            f"Untuk Menghapus grup tersebut dari blacklist gcast.\n\n  â€¢  **Note : **Ketik perintah** `{cmd}addbl` **dan** `{cmd}delbl` **di grup yang kamu Blacklist.",
+            f"Untuk Menghapus grup tersebut dari blacklist gcast.\n\n  Ć¢ā‚¬Ā¢  **Note : **Ketik perintah** `{cmd}addbl` **dan** `{cmd}delbl` **di grup yang kamu Blacklist.",
         ],
     ],
 )
