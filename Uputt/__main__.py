@@ -5,6 +5,7 @@ from uvloop import install
 
 from Uputt.modules import ALL_MODULES
 from Uputt import BOTLOG_CHATID, LOGGER, LOOP, aiosession, app, bots, ids
+from Uputt.helpers import join
 from Uputt.helpers.misc import heroku, create_botlog
 
 BOT_VER = "9.9.9"
