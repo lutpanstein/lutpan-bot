@@ -98,11 +98,11 @@ async def pingme(client: Client, message: Message):
     await xx.edit("**NI {client.me.mention}LIAT YA AJG PINGNYA**")
     await message.reply_text(
         f" ⚝ 𝙻𝚄𝚃𝙿𝙰𝙽 𝚄𝙱𝙾𝚃  ⚝\n"
-        f" 𝗣𝗜𝗡𝗚𝗡𝗬𝗔 𝗦𝗘𝗚𝗜𝗡𝗜 𝗔𝗝𝗚\n"
+        f" 𝗣𝗜�𝗚�𝗬𝗔 𝗦𝗘𝗚𝗜�𝗜 𝗔𝗝𝗚\n"
         f" 🏓 `%sms`\n"
-        f" ⚘ 𝙽𝚈𝙰𝙻𝙰 ❥ `{uptime}`\n"
-        f" ⚘ 𝙾𝚆𝙽𝙴𝚁 ❥ `{client.me.mention}`\n"
-        f" ⚘ 𝚅𝙴𝚁𝚂𝙸 ❥ `{BOT_VER}`" % (duration)
+        f" ⚘ 𝙽𝚈𝙰𝙻𝙰 � `{uptime}`\n"
+        f" ⚘ 𝙾𝚆𝙽𝙴𝚁 � `{client.me.mention}`\n"
+        f" ⚘ 𝚅𝙴𝚁𝚂𝙸 � `{BOT_VER}`" % (duration)
 )
 
 @Client.on_message(
@@ -122,11 +122,11 @@ async def kping(client: Client, message: Message):
     duration = (end - start).microseconds / 1000
     await xx.edit(
         f" ⚝ 𝙻𝚄𝚃𝙿𝙰𝙽 𝚄𝙱𝙾𝚃  ⚝\n"
-      f" 𝗣𝗜𝗡𝗚𝗡𝗬𝗔 𝗦𝗘𝗚𝗜𝗡𝗜 𝗔𝗝𝗚\n"
+      f" 𝗣𝗜�𝗚�𝗬𝗔 𝗦𝗘𝗚𝗜�𝗜 𝗔𝗝𝗚\n"
       f" 🏓 `%sms`\n"
-      f" ⚘ 𝙽𝚈𝙰𝙻𝙰 ❥ `{uptime}`\n"
-      f" ⚘ 𝙾𝚆𝙽𝙴𝚁 ❥ `{client.me.mention}`\n"
-      f" ⚘ 𝚅𝙴𝚁𝚂𝙸 ❥ `{BOT_VER}`" % (duration)
+      f" ⚘ 𝙽𝚈𝙰𝙻𝙰 � `{uptime}`\n"
+      f" ⚘ 𝙾𝚆𝙽𝙴𝚁 � `{client.me.mention}`\n"
+      f" ⚘ 𝚅𝙴𝚁𝚂𝙸 � `{BOT_VER}`" % (duration)
 )
 
      

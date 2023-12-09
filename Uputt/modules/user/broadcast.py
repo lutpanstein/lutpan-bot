@@ -127,7 +127,7 @@ async def blchatgcast(client: Client, message: Message):
     if blacklistgc == "True":
         await edit_or_reply(
             message,
-            f"ðŸ”® **Blacklist GCAST:** `Enabled`\n\nðŸ“š **Blacklist Group:**\nÂ» {list}\n\nKetik `{cmd}addbl` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
+            f"ðŸ”® **Blacklist GCAST:** `Enabled`\n\nðŸ“� **Blacklist Group:**\nÂ» {list}\n\nKetik `{cmd}addbl` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
         )
     else:
         await edit_or_reply(message, "ðŸ”® **Blacklist GCAST:** `Disabled`")
