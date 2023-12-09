@@ -18,7 +18,7 @@ from Uputt import *
 from Uputt.helpers.basic import edit_or_reply
 from Uputt.helpers.PyroHelpers import ReplyCheck
 from Uputt.helpers.tools import get_arg
-from Uputt of i.utils import s_paste
+from Uputt.utils import s_paste
 
 from .help import *
 
