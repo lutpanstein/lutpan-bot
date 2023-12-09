@@ -90,19 +90,19 @@ async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
 
-     xx = await edit_or_reply(message, "**NI LIAT YA AJG PINGYA**")
-           await xx.edit("**BENTAR YA CUKI**")
-           await xx.edit("**LAGI NGETEST PING LU KONTOL**")
-           await xx.edit("**NGETEST PING BUAT GIKES YA**")
-           await xx.edit("**KEK DERESS AJA GIKESANLU**")
-           await xx.edit("**NI {client.me.mention}LIAT YA AJG PINGNYA**")
-           await message.reply_text(
-      f" ⚝ 𝙻𝚄𝚃𝙿𝙰𝙽 𝚄𝙱𝙾𝚃  ⚝\n"
-      f" 𝗣𝗜𝗡𝗚𝗡𝗬𝗔 𝗦𝗘𝗚𝗜𝗡𝗜 𝗔𝗝𝗚\n"
-      f" 🏓 `%sms`\n"
-      f" ⚘ 𝙽𝚈𝙰𝙻𝙰 ❥ `{uptime}`\n"
-      f" ⚘ 𝙾𝚆𝙽𝙴𝚁 ❥ `{client.me.mention}`\n"
-      f" ⚘ 𝚅𝙴𝚁𝚂𝙸 ❥ `{BOT_VER}`" % (duration)
+    xx = await edit_or_reply(message, "**NI LIAT YA AJG PINGYA**")
+    await xx.edit("**BENTAR YA CUKI**")
+    await xx.edit("**LAGI NGETEST PING LU KONTOL**")
+    await xx.edit("**NGETEST PING BUAT GIKES YA**")
+    await xx.edit("**KEK DERESS AJA GIKESANLU**")
+    await xx.edit("**NI {client.me.mention}LIAT YA AJG PINGNYA**")
+    await message.reply_text(
+        f" ⚝ 𝙻𝚄𝚃𝙿𝙰𝙽 𝚄𝙱𝙾𝚃  ⚝\n"
+        f" 𝗣𝗜𝗡𝗚𝗡𝗬𝗔 𝗦𝗘𝗚𝗜𝗡𝗜 𝗔𝗝𝗚\n"
+        f" 🏓 `%sms`\n"
+        f" ⚘ 𝙽𝚈𝙰𝙻𝙰 ❥ `{uptime}`\n"
+        f" ⚘ 𝙾𝚆𝙽𝙴𝚁 ❥ `{client.me.mention}`\n"
+        f" ⚘ 𝚅𝙴𝚁𝚂𝙸 ❥ `{BOT_VER}`" % (duration)
 )
 
 @Client.on_message(
