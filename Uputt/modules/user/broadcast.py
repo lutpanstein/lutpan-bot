@@ -57,37 +57,37 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
         if message.reply_to_message or get_arg(message):
-        xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
-        await xx.edit(message, "Wait titittttt bakal dikirim kok gikesanlu yg gaseberapa"),
-        await xx.edit(message, "Eh iya baca ini kontollll... kata lutpan kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
-        await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
-        await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
-        await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
-        await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
-        await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**")     
-    else: 	
-         return await message.edit_text("**Direply {client.me.mention} kontoooolll kalo ga tambahin kata dibelakang command**")
-    done = 0
-    error = 0
-    async for dialog in client.get_dialogs():
-        if dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
-            if message.reply_to_message:
-                msg = message.reply_to_message
-            elif get_arg:
-                msg = get_arg(message)
-            chat = dialog.chat.id
-            if chat not in GCAST_BLACKLIST and chat not in BLACKLIST_GCAST:
-                try:
+            xx = await edit_or_reply(message, "Bentar {client.me.mention} lagi ngirim gikesanlu meskipun lu kalo ngegikes ga sederes gikesan Lutpan....")
+            await xx.edit(message, "Wait titittttt bakal dikirim kok gikesanlu yg gaseberapa"),
+            await xx.edit(message, "Eh iya baca ini kontollll... kata lutpan kalo lu deres gikes lu ntar lu kelimit ya {client.me.mention}")
+            await xx.edit(message, "Eh malah bisa kedeak akunlu {client.me.mention} katanya doang tpi gatau.....")
+            await xx.edit(message, "Kalo minta dideresin kalo ga dideresin balik jangan main mute ya ajg {client.me.mention}")
+            await xx.edit(message, "Eh iya tdi pinglu pas gikes segini `%sms` ya bejirrr.. liat pinglu {client.me.mention}")
+            await xx.edit(message, "Bentar {client.me.mention} tunggu aja ntar kekirim gikes lu kata lutpan...")
+            await xx.edit(message, "**Kalo Udah done sungkem ya sama Lutpannn wkwkwkwkkwkwkw**")     
+        else: 	
+            return await message.edit_text("**Direply {client.me.mention} kontoooolll kalo ga tambahin kata dibelakang command**")
+            done = 0
+            error = 0
+            async for dialog in client.get_dialogs():
+                if dialog.chat.type in (enums.ChatType.GROUP, enums.ChatType.SUPERGROUP):
                     if message.reply_to_message:
-                        await msg.copy(chat)
-                    elif get_arg:
-                        await client.send_message(chat, msg)
-                    done += 1
-                    await asyncio.sleep(10)
-                except Exception:
-                    error += 1
-                    await asyncio.sleep(10)
-    await xx.reply_text(
+                        msg = message.reply_to_message
+                elif get_arg:
+                    msg = get_arg(message)
+        chat = dialog.chat.id
+        if chat not in GCAST_BLACKLIST and chat not in BLACKLIST_GCAST:
+                    try:
+                        if message.reply_to_message:
+                            await msg.copy(chat)
+                        elif get_arg:
+                            await client.send_message(chat, msg)
+                        done += 1
+                        await asyncio.sleep(10)
+                    except Exception:
+                            error += 1
+                            await asyncio.sleep(10)
+        await xx.reply_text(
         f"**MASUK KE** `{done}` **YA AJG** {client.me.mention}... `{error}` **YG GAMASUK... LU DIMUTE DISANA SI KATA LUTPAN WKWKWKWKWKWKWKWK**")           
 @Client.on_message(filters.command("cgucast", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("gucast", cmd) & filters.me)
